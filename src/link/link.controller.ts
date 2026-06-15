@@ -7,12 +7,11 @@ export class LinkController {
   constructor(private readonly linkService: LinkService) {}
 
   @Post('links')
-  create(@Body() dto: CreateShortUrlDto){ }
+  create(@Body() dto: CreateShortUrlDto) {}
 
   @Get(':code')
- async redirect(@Param('code') code: string, @Res() res: any) {
-  const url = await this.linkService.getOriginalUrl(code);
-  res.redirect(url);
-}
-  
+  async redirect(@Param('code') code: string, @Res() res: any) {
+    const url = await this.linkService.getOriginalUrl(code);
+    res.redirect(url);
+  }
 }

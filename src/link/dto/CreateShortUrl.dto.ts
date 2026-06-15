@@ -1,10 +1,13 @@
 import { IsNotEmpty, IsUrl } from "class-validator";
 
 export class CreateShortUrlDto {
-    @IsUrl(
-        { protocols: ['https', 'wss'], require_valid_protocol: true},
-        {message: "Некоректный формат URL"}
-    )
-    @IsNotEmpty()
-    link: string;
+  @IsUrl(
+    {
+      protocols: ['http', 'https', 'wss', 'ftp', 'mailto', 'file'],
+      require_valid_protocol: true,
+    },
+    { message: 'Некоректный формат URL' },
+  )
+  @IsNotEmpty()
+  link: string;
 }
