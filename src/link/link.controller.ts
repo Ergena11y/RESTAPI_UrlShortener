@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post, Res } from '@nestjs/common';
 import { LinkService } from './link.service';
-import { CreateShortUrlDto } from './dto/CreateShortUrlDto';
+import { CreateShortUrlDto } from './dto/CreateShortUrl.dto';
 
 @Controller('link')
 export class LinkController {
